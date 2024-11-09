@@ -66,7 +66,7 @@ fun WelcomeScreen(
                     fontWeight = FontWeight.SemiBold
                 ),
                 onClick = {
-                    navController.navigate("onboard")
+                    navController.navigate("onboarding")
                 }
             )
         }

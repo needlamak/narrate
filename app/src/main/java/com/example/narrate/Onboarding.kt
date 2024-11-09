@@ -100,7 +100,7 @@ fun OnboardingScreen(
                     fontWeight = FontWeight.SemiBold
                 ),
                 onClick = {
-                    navController.navigate("naming")
+                    navController.navigate("personalize")
                 }
             )
         }
