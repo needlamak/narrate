@@ -166,27 +166,22 @@ fun SignUpScreen(
                 if (password == confirmPassword && password.length >= 6 && isValidEmail(email)) {
                     isLoading = true
 
-                    // Check for network availability before signing up
                     if (isNetworkAvailable(context)) {
                         authManager.signUp(email, password) { success, error ->
                             isLoading = false
                             if (success) {
-                                // Save credentials securely if Remember Me is checked
-                                if (rememberMe) {
-                                    // Implement secure storage logic here
-                                }
-                                onSignUpSuccess(email)
+                               onSignUpSuccess(email)
                             } else {
-                                emailExists = true
+                                emailExists = true // Show email exists error
                             }
                         }
                     } else {
                         isLoading = false
-                        networkError = true // Set network error state to true
+                        networkError = true // Show network error
                     }
                 } else {
                     passwordsMatch = password == confirmPassword
-                    passwordLengthValid = password.length >= 6;
+                    passwordLengthValid = password.length >= 6
                 }
             }) {
                 if (isLoading) {
