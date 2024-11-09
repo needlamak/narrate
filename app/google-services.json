@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "40366247339",
+    "project_id": "narrate-social",
+    "storage_bucket": "narrate-social.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40366247339:android:c9aa6b135081f3326f56ee",
+        "android_client_info": {
+          "package_name": "com.example.narrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40366247339-l9p88a50ruuovism7jprp0ndjmfohfq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNAod-DeQ7OSWt8WwABfA9d8O9vaGFXZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40366247339-l9p88a50ruuovism7jprp0ndjmfohfq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
