@@ -149,18 +149,14 @@ fun PersonalizeScreen(navController: NavController, context: Context) {
                     Spacer(modifier = Modifier.height(20.dp))
 
                     Button(
-                        onClick = {
+                        onClick= {
                             if (username.isNotBlank() && selectedImage != null) {
                                 val authManager = AuthManager(context as MainActivity)
-                                authManager.uploadUserName(username) { success, error ->
+                                authManager.uploadUserData(username, selectedDate.toString(), selectedImage!!) { success, error ->
                                     if (success) {
-                                        // Navigate to HomeScreen after successful upload with username and selected date and image resource ID
                                         navController.navigate("home/$username/${selectedDate.toString()}/$selectedImage")
                                     } else {
-                                        Log.e(
-                                            "PersonalizeScreen",
-                                            "Failed to upload username: $error"
-                                        )
+                                        Log.e("PersonalizeScreen", "Failed to upload data: $error")
                                     }
                                 }
                             }
@@ -169,10 +165,7 @@ fun PersonalizeScreen(navController: NavController, context: Context) {
                         modifier = Modifier.size(300.dp, 60.dp),
                         shape = RoundedCornerShape(20)
                     ) {
-                        Text(
-                            "Continue",
-                            style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
-                        )
+                        Text("Continue", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.SemiBold))
                     }
                 }
             }

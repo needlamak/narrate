@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.narrate"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -47,9 +47,9 @@ android {
     }
     packaging {
         resources {
-            excludes += listOf("/META-INF/DEPENDENCIES", "/META-INF/{AL2.0,LGPL2.1}")
+            excludes += listOf("/META-INF/DEPENDENCIES", "/META-INF/{AL2.0,LGPL2.1}") //excludes += "/META-INF/{AL2.0,LGPL2.1}, META-INF/DEPENDENCIES) )
 
-            //excludes += "/META-INF/{AL2.0,LGPL2.1}, META-INF/DEPENDENCIES"
+            //excludes += "/META-INF/{AL2.0,LGPL2.1}, META-INF/DEPENDENCIES
         }
     }
 }
@@ -57,9 +57,10 @@ android {
 dependencies {
     implementation ("androidx.navigation:navigation-compose:2.8.3")
     implementation("androidx.core:core-splashscreen:1.0.1")
-//    implementation ("com.airbnb.android:lottie:4.2.2")
-//    implementation("com.google.dagger:hilt-android:2.44")
+    implementation ("com.airbnb.android:lottie:4.2.2")
+    implementation("com.google.dagger:hilt-android:2.44")
 //    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
     implementation("androidx.preference:preference:1.2.1")
     implementation("org.mindrot:jbcrypt:0.4")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
@@ -73,10 +74,12 @@ dependencies {
     implementation ("androidx.security:security-crypto:1.1.0-alpha06")
     implementation ("com.google.firebase:firebase-messaging-ktx:24.0.3")
     implementation ("com.google.auth:google-auth-library-oauth2-http:1.13.0")
-    implementation ("com.google.api:gax:1.63.0")
+    //implementation ("com.google.api:gax:1.63.0")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7") // Ensure you have lifecycle dependencies
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
 
 
     implementation(libs.androidx.core.ktx)
@@ -87,11 +90,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.core.i18n)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.ui.test.android)
+    implementation(libs.androidx.ui.test.android)
+    implementation(libs.annotations)
+    androidTestImplementation(libs.androidx.espresso.core.v350)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(kotlin("script-runtime"))
 }
